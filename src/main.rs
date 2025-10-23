@@ -22,9 +22,6 @@ fn main() {
             }
         };
 
-        // println!("Secret number: {secret_number}");
-        // println!("You guessed: {guess}");
-
         match guess.cmp(&secret_number) {
             Ordering::Equal => {
                 println!("You got it correct!");
