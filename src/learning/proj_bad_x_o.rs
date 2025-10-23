@@ -2,6 +2,9 @@ use std::io;
 
 #[allow(dead_code)]
 pub fn run() -> () {
+    //  0 -> Empty cell
+    //  1 -> X Cell
+    // -1 -> O Cell
     let mut board: [[i8; 3]; 3] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
     display_board(&board);
     handle_board_input(&mut board);
