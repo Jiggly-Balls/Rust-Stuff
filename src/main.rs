@@ -4,6 +4,7 @@ use std::io::{self, Stdin};
 
 fn main() {
     let stdin: Stdin = io::stdin();
+    let mut tries: u32 = 3;
     let secret_number: u32 = rand::rng().random_range(1..=10);
 
     loop {
@@ -32,5 +33,15 @@ fn main() {
             Ordering::Greater => println!("Too big!\n"),
             Ordering::Less => println!("Too small!\n"),
         };
+
+        tries -= 1;
+
+        println!("You have {tries} tries left!");
+
+        if tries == 0 {
+            println!("You lost!");
+            println!("The secret number was: {secret_number}");
+            break;
+        }
     }
 }
