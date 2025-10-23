@@ -1,9 +1,7 @@
-mod guessing_game;
-mod rust_arrays;
-mod rust_tuples;
+mod learning;
 
 fn main() {
     // guessing_game::run();
     // rust_arrays::run();
-    rust_tuples::run();
+    learning::rust_tuples::run();
 }
