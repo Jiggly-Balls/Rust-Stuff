@@ -6,8 +6,12 @@ pub fn run() -> () {
     //  1 -> X Cell
     // -1 -> O Cell
     let mut board: [[i8; 3]; 3] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
-    display_board(&board);
-    handle_board_input(&mut board);
+
+    loop {
+        display_board(&board);
+        handle_board_input(&mut board);
+        print!("\n=====\n\n");
+    }
 }
 
 fn display_board(board_arr: &[[i8; 3]; 3]) -> () {
@@ -26,10 +30,18 @@ fn display_board(board_arr: &[[i8; 3]; 3]) -> () {
 }
 
 fn handle_board_input(board_arr: &mut [[i8; 3]; 3]) -> () {
-    let row_input: i8 = get_input("Enter the row: ", 1, 3);
-    let col_input: i8 = get_input("Enter the column: ", 1, 3);
+    loop {
+        let row_input: i8 = get_input("Enter the row: ", 1, 3);
+        let col_input: i8 = get_input("Enter the column: ", 1, 3);
 
-    board_arr[row_input - 1][col_input - 1] = 1;
+        let cell: i8 = board_arr[(row_input - 1) as usize][(col_input - 1) as usize];
+        if cell != 0 {
+            println!("That cell is already occupied!");
+            continue;
+        }
+        board_arr[(row_input - 1) as usize][(col_input - 1) as usize] = 1;
+        break;
+    }
 }
 
 fn get_input(prompt: &str, min_range: i8, max_range: i8) -> i8 {
