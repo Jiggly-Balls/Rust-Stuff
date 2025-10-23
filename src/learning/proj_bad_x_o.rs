@@ -70,3 +70,12 @@ fn get_input(prompt: &str, min_range: i8, max_range: i8) -> i8 {
         return input_data;
     }
 }
+
+fn win_lose(board_arr: &mut [[i8; 3]; 3]) -> u8 {
+    // Returns either one of the following values
+    // 0 -> X won
+    // 1 -> O won
+    // 2 -> Tie
+
+    return 0;
+}
