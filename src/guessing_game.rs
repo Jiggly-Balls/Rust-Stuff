@@ -2,6 +2,7 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io::{self, Stdin};
 
+#[allow(dead_code)]
 pub fn run() {
     let stdin: Stdin = io::stdin();
     let mut tries: u32 = 3;
