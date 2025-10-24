@@ -1,7 +1,7 @@
 mod learning;
 
 fn main() {
-    // learning::guessing_game::run();
+    // learning::proj_guessing_game::run();
     // learning::rust_arrays::run();
     // learning::rust_tuples::run();
 
