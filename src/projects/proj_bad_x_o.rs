@@ -14,15 +14,15 @@ pub fn run() -> () {
         player_turn = !player_turn;
         display_board(&board);
         handle_board_turn(&mut board, player_turn);
-        print!("\n=====\n\n");
+        println!("=====\n\n");
         game_outcome = win_lose(&board);
 
         if game_outcome == 0 {
-            println!("X has won!");
+            println!("X has won!\n");
         } else if game_outcome == 1 {
-            println!("O has won!");
+            println!("O has won!\n");
         } else if game_outcome == 2 {
-            println!("It's a tie!");
+            println!("It's a tie!\n");
         }
 
         if game_outcome != 3 {
@@ -63,12 +63,12 @@ fn handle_board_turn(board_arr: &mut [[i8; 3]; 3], player_turn: bool) -> () {
         }
     } else {
         loop {
-            let npc_row: i32 = rand::rng().random_range(0..3);
-            let npc_col: i32 = rand::rng().random_range(0..3);
+            let npc_row: u8 = rand::rng().random_range(0..3);
+            let npc_col: u8 = rand::rng().random_range(0..3);
 
-            let cell: i8 = board_arr[(npc_row - 1) as usize][(npc_col - 1) as usize];
+            let cell: i8 = board_arr[(npc_row) as usize][(npc_col) as usize];
             if cell == 0 {
-                board_arr[(npc_row - 1) as usize][(npc_col - 1) as usize] = -1;
+                board_arr[(npc_row) as usize][(npc_col) as usize] = -1;
                 break;
             }
         }
