@@ -1,2 +1,2 @@
-pub mod proj_bad_x_o;
-pub mod proj_guessing_game;
+pub mod bad_tictactoe;
+pub mod guessing_game;
